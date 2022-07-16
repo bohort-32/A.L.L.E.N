@@ -5,11 +5,13 @@ from Modules.Secret import get_API_KEY_WOLFRAMALPHA
 sys.path.insert(1, 'Modules')
 
 # Imports
-from Secrets import *
+from Secret import *
 from Vocal import *
 from Comprendre import *
+from Interface_Utilisateur import *
 
 
+USERInterface = UserInterface()
 
 # Constantes
 ENTREE_VOCAL = False
@@ -26,46 +28,19 @@ if __name__ == '__main__':
     print("=== DEBUT DU SCRIPT ===")
     API_KEY = get_API_KEY_WOLFRAMALPHA()
 
+    # Informe utilisateur allumag A.L.L.E.N
+    USERInterface.informer_utilisateur(Debut)
+
     # Tant qu'on demande pas le fin
-
-    # Sortie vocale
-    if SORTIE_VOCAL == True:
-        parler(Debut)
-
-    # Sortie clavier
-    else:
-        print(Debut)
-
     while FIN == False:
+        # Demande utilisateur
+        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface)
 
-        # Entrée vocale
-        if ENTREE_VOCAL == True:
-            # Ecoute
-            retour = comprendre(ecouter(), ENTREE_VOCAL, SORTIE_VOCAL, FIN, API_KEY)
-        # Entrée clavier
-        else:
-            # Input
-            retour = comprendre(input("Demande : "), ENTREE_VOCAL, SORTIE_VOCAL, FIN, API_KEY)
-
-
-        ENTREE_VOCAL = retour['ENTREE_VOCAL']
-        SORTIE_VOCAL = retour['SORTIE_VOCAL']
         FIN = retour['FIN']
 
         if FIN == True :
-            # Entrée vocale
-            if SORTIE_VOCAL == True:
-                parler(Au_revoir)
-
-            # Entrée clavier
-            else:
-                print(Au_revoir)
-
+            # Eteindre A.L.L.E.N
+            USERInterface.informer_utilisateur(Au_revoir)
         else:
-            # Sortie vocale
-            if SORTIE_VOCAL == True:
-                parler(retour['Reponse'])
-
-            # Sortie clavier
-            else:
-                print(retour['Reponse'])
+            # Réponse à l'utilisateur
+            USERInterface.informer_utilisateur(retour['Reponse'])
