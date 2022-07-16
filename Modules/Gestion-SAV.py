@@ -1,6 +1,8 @@
 import os
 
-def initialiser_donnees(USER_NAME):
+def initialiser_dossiers(USER_NAME):
+    # Indique si c'est la première initialisation
+    premiere_initialisation = False
     # Chemin des données utilisateurs
     chemin_DATA = f'../DATA/'
     # Chemin des données de l'utilisateur courant
@@ -13,3 +15,8 @@ def initialiser_donnees(USER_NAME):
         os.mkdir(chemin_DATA)
     if not chemin_user_exist:
         os.mkdir(chemin_user)
+        # Indique que c'est la premiere initialisation
+        premiere_initialisation = True
+
+    return premiere_initialisation
+
