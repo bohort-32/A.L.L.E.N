@@ -14,54 +14,57 @@ LISTE_ALLUMER = ['allumer', 'on', 'Allumer', 'On']
 LISTE_ENTREE = ['Entrée', 'entrée', 'Entree', 'entrée', 'Input', 'input']
 LISTE_SORTIE = ['Sortie', 'sortie', 'Output', 'output']
 LISTE_STATUT = ['Statut', 'statut']
-LISTE_PERSONNE = ['toi', 'Toi', 'Système', 'système', 'Systeme', 'systeme', 'Tu', 'te', 'Sys', 'sys']
+LISTE_ALLEN = ['toi', 'Toi', 'Système', 'système', 'Systeme', 'systeme', 'Tu', 'Sys', 'sys']
 LISTE_TRADUCTION = ['Traduire', 'traduire', 'Traduction', 'traduction']
 LISTE_TRANSITION = ['en', 'En', 'vers', 'Vers', 'a', 'à']
 LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
 
 
-def comprendre(requete, ENTREE_VOCAL, SORTIE_VOCAL, FIN, API_KEY):
+def comprendre(requete, API_KEY, USERInterface):
     retour = ''
+    print(requete)
+    FIN = False
+    
+    recherche_entree = rechercher_mot(requete, LISTE_ENTREE)
+    recherche_sortie = rechercher_mot(requete, LISTE_SORTIE)
+    recherche_allumer = rechercher_mot(requete, LISTE_ALLUMER)
+    recherche_eteindre = rechercher_mot(requete, LISTE_FIN)
+    recherche_ALLEN = rechercher_mot(requete, LISTE_ALLEN)
 
     # Demande allumer
-    if (rechercher_mot(requete, LISTE_ENTREE) or rechercher_mot(requete, LISTE_ALLUMER)) == True:
+    if (recherche_allumer) == True:
         # Entrée
-        if rechercher_mot(requete, LISTE_ENTREE) == True:
-            ENTREE_VOCAL = True
+        if recherche_entree == True:
+            USERInterface.set_entree_vocal(True)
         # Sortie
-        if rechercher_mot(requete, LISTE_SORTIE) == True:
-            SORTIE_VOCAL = True
+        if recherche_sortie:
+            USERInterface.set_sortie_vocal(True)
 
     # Demande éteindre
-    elif rechercher_mot(requete, LISTE_FIN) == True:
+    elif recherche_eteindre:
         # Système
-        if recherche_ALLEN == True or :
-            print('???')
+        if len(requete.split(' ')) == 1 or recherche_ALLEN == True:
             FIN = True
         else:
             # Entrée
-            if rechercher_mot(requete, LISTE_ENTREE) == True:
-                ENTREE_VOCAL = False
+            if recherche_entree:
+                USERInterface.set_entree_vocal(False)
             # Sortie
-            if rechercher_mot(requete, LISTE_SORTIE) == True:
-                SORTIE_VOCAL = False
-
-    # Statut
-    if rechercher_mot(requete, LISTE_STATUT) == True:
-        # Système
-        if len(requete.split(' ')) == 1 or rechercher_mot(requete, LISTE_PERSONNE) == True:
-            retour = f"ENTREE_VOCAL : {ENTREE_VOCAL}, SORTIE_VOCAL : {SORTIE_VOCAL}, FIN : {FIN}"
+            if recherche_sortie:
+                USERInterface.set_sortie_vocal(False)
 
 
     # Traduction
-    if rechercher_mot(requete, LISTE_TRADUCTION) == True or (rechercher_mot(requete, LISTE_LANGUE) and rechercher_mot(requete, LISTE_TRANSITION) == True):
+    elif rechercher_mot(requete, LISTE_TRADUCTION) == True or (rechercher_mot(requete, LISTE_LANGUE) and rechercher_mot(requete, LISTE_TRANSITION) == True):
         retour = demande_trad_utilisateur(requete, LISTE_LANGUE, LISTE_TRADUCTION)
 
+    # Recherche
     else:
         retour = traduction(rechercher(traduction(requete, 'en', 'fr'), API_KEY), 'fr', 'en')
 
-    return {'Reponse': retour, 'ENTREE_VOCAL': ENTREE_VOCAL, 'SORTIE_VOCAL': SORTIE_VOCAL, 'FIN': FIN}
+
+    return {'Reponse': retour, 'FIN': FIN}
 
 
 
