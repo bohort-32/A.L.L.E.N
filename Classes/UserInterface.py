@@ -1,29 +1,25 @@
+from tkinter.messagebox import NO
 from Modules.Vocal import *
+from Classes.Utilisateur import *
 
 # Gère les interfaces utilisateur
 class UserInterface :
-    def __init__(self, entree_vocal=False, sortie_vocal=False):
+    def __init__(self, entree_vocal=False, sortie_vocal=False, user=None):
         self.entree_vocal = entree_vocal
         self.sortie_vocal = sortie_vocal
+        self.user = user
 
 
     def set_entree_vocal(self, on_off):
         self.entree_vocal = on_off
+        if self.user != None:
+            self.user.set_entree_vocal(on_off)
 
 
     def set_sortie_vocal(self, on_off):
         self.sortie_vocal = on_off
-
-
-    def eteindre_vocal(self):
-        self.set_entree_vocal(False)
-        self.set_sortie_vocal(False)
-
-
-    def allumer_vocal(self):
-        self.set_entree_vocal(True)
-        self.set_sortie_vocal(True)
-
+        if self.user != None:
+            self.user.set_sortie_vocal(on_off)
 
     # Informe l'utilisateur d'un message
     def informer_utilisateur(self, message):
@@ -48,6 +44,3 @@ class UserInterface :
 
         # Retour de l'utilisateur
         return retour
-
-    def toString(self):
-        print(f'Voix : {self.sortie_vocal} | Entrée : {self.entree_vocal}')

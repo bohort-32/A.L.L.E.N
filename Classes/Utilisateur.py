@@ -3,15 +3,28 @@ import json
 # Gère les interfaces utilisateur
 class Utilisateur:
     def __init__(self, nom='', clef_maitre='', win_usr=''):
+        # Elements élémentaire
         self.nom = nom
         self.clef_maitre = clef_maitre
         self.win_usr = win_usr
+        # Elements Audio
+        self.entree_vocal = False
+        self.sortie_vocal = False
+
         if (self.nom and clef_maitre and win_usr) != '':
             self.sauvegarder()
 
     def sauvegarder(self):
         # Définie les données à sauvegarder
-        sav_user = {"nom": self.nom, "ClefMaitre": self.clef_maitre, "WinUser":self.win_usr}
+        sav_user = {
+            "nom": self.nom, 
+            "ClefMaitre": self.clef_maitre, 
+            "WinUser":self.win_usr,
+            "Audio": {
+                "Entrée":self.entree_vocal,
+                "Sortie":self.sortie_vocal
+                }
+            }
         # Ouvre le fichier
         with open(f'./DATA/{self.win_usr}/utilisateur.json', 'w') as outfile:
             # Ecris
@@ -46,3 +59,13 @@ class Utilisateur:
     def set_win_usr(self, win_usr_nv):
         self.win_usr = win_usr_nv
         self.sauvegarder()    
+
+    # Change et sauvegarde les paramètres audio
+    def set_entree_vocal(self, entree_vocal):
+        self.entree_vocal = entree_vocal
+        self.sauvegarder()
+
+    # Change et sauvegarde les paramètres audio
+    def set_sortie_vocal(self, sortie_vocal):
+        self.sortie_vocal = sortie_vocal
+        self.sauvegarder()

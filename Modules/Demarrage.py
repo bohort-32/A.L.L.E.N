@@ -25,3 +25,4 @@ def demarrerScript():
     # Vérifie qu'un utilisateur existe ou le crée
     verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user)
     user = Utilisateur().charger_donnees_utilisateur(chemin_fic_user)
+    USERInterface = UserInterface(user.entree_vocal, user.sortie_vocal, user)
