@@ -36,7 +36,8 @@ def comprendre(requete, ENTREE_VOCAL, SORTIE_VOCAL, FIN, API_KEY):
     # Demande éteindre
     elif rechercher_mot(requete, LISTE_FIN) == True:
         # Système
-        if len(requete.split(' ')) == 1 or rechercher_mot(requete, LISTE_PERSONNE) == True:
+        if recherche_ALLEN == True or :
+            print('???')
             FIN = True
         else:
             # Entrée
