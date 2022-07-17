@@ -1,6 +1,6 @@
 import os
 from ModulesCoeur.Initialisation import *
-from Classes.UserInterface import *
+from ClassesCoeur.UserInterface import *
 
 
 def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):

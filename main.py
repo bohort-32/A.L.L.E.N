@@ -9,7 +9,7 @@ from ModulesCoeur.Comprendre import *
 from ModulesCoeur.Initialisation import *
 from ModulesCoeur.Demarrage import *
 # Imports Classes
-from Classes.UserInterface import *
+from ClassesCoeur.UserInterface import *
 
 # Constantes
 FIN = False

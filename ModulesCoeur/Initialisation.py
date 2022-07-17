@@ -1,5 +1,5 @@
 import os
-from Classes.Utilisateur import *
+from ClassesCoeur.Utilisateur import *
 
 def initialiser_dossier(USER_NAME, USERInterface, chemin_DATA, chemin_user, data_exist, chemin_user_exist):
     # == Création des dossier si besoin
