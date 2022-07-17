@@ -5,7 +5,7 @@ class Utilisateur:
     def __init__(self, nom='', clef_maitre='', win_usr=''):
         # Elements élémentaire
         self.nom = nom
-        self.clef_maitre = cryptocode.encrypt(clef_maitre, clef_maitre)
+        self.clef_maitre = clef_maitre
         self.win_usr = win_usr
         # Elements Audio
         self.entree_vocal = False
