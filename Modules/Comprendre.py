@@ -1,5 +1,5 @@
-from Traduction import *
-from Recherche import *
+from Modules.Traduction import *
+from Modules.Recherche import *
 
 """
 Ce fichier comporte toutes les fonctions liées à la compréhension écrite et orale d'une demande
@@ -23,7 +23,6 @@ LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
 def comprendre(requete, API_KEY, USERInterface):
     retour = ''
-    print(requete)
     FIN = False
     
     recherche_entree = rechercher_mot(requete, LISTE_ENTREE)

@@ -1,24 +1,28 @@
 import sys
 import os
-from Modules.Secret import get_API_KEY_WOLFRAMALPHA
 # Import du dossier des Modules
-sys.path.insert(1, 'Modules')
 
-# Imports
-from Secret import *
-from Vocal import *
-from Comprendre import *
-from Interface_Utilisateur import *
-
-
-USERInterface = UserInterface()
+# Imports Modules
+from Modules.Secret import *
+from Modules.Vocal import *
+from Modules.Comprendre import *
+from Modules.Initialisation import *
+from Modules.Demarrage import *
+# Imports Classes
+from Classes.UserInterface import *
 
 # Constantes
-ENTREE_VOCAL = False
-SORTIE_VOCAL = False
 FIN = False
 
-USER_NAME = os.environ.get( "USERNAME" )
+
+
+demarrerScript()
+
+
+
+
+""""
+
 Debut = f'Bonjour {USER_NAME}'
 Au_revoir = 'Au revoir'
 
@@ -44,3 +48,4 @@ if __name__ == '__main__':
         else:
             # Réponse à l'utilisateur
             USERInterface.informer_utilisateur(retour['Reponse'])
+"""
