@@ -41,6 +41,11 @@ class Utilisateur:
         self.clef_maitre = données_user['ClefMaitre']
         self.win_usr = données_user['WinUser']
 
+        # Extraction des données Audio
+        audio = données_user['Audio']
+        self.entree_vocal = audio['Entrée']
+        self.sortie_vocal = audio['Sortie']
+
         # Retour des données
         return self
         

@@ -16,14 +16,11 @@ FIN = False
 
 
 
-demarrerScript()
+Retours_demarrage = demarrerScript()
+USERInterface = Retours_demarrage['USERInterface']
+User = Retours_demarrage['Utilisateur']
 
-
-
-
-""""
-
-Debut = f'Bonjour {USER_NAME}'
+Debut = f'Bonjour {User.nom}'
 Au_revoir = 'Au revoir'
 
 
@@ -48,4 +45,3 @@ if __name__ == '__main__':
         else:
             # Réponse à l'utilisateur
             USERInterface.informer_utilisateur(retour['Reponse'])
-"""
