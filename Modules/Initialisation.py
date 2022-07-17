@@ -14,3 +14,4 @@ def initialiser_dossier(USER_NAME, USERInterface, chemin_DATA, chemin_user, data
 def initialiser_infos_user(USERInterface, USER_NAME):
     nom_user = USERInterface.demande_utilisateur('Comment dois-je vous appeller ?')
     user = Utilisateur(nom_user, 'AZERTY', USER_NAME)
+    USERInterface.informer_utilisateur('Félicitations, votre compte est initialisé !')

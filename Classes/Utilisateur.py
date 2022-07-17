@@ -5,7 +5,7 @@ class Utilisateur:
     def __init__(self, nom='', clef_maitre='', win_usr=''):
         # Elements élémentaire
         self.nom = nom
-        self.clef_maitre = clef_maitre
+        self.clef_maitre = cryptocode.encrypt(clef_maitre, clef_maitre)
         self.win_usr = win_usr
         # Elements Audio
         self.entree_vocal = False
@@ -52,7 +52,7 @@ class Utilisateur:
 
     # Change et sauvegarde la clef
     def set_clef_maitre(self, clef_maitre_nv):
-        self.clef_maitre_nv = clef_maitre_nv
+        self.clef_maitre = clef_maitre_nv
         self.sauvegarder()
 
     # Change et sauvegarde l'id windows
