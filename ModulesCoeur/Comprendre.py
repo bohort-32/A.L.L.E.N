@@ -1,5 +1,5 @@
-from Modules.Traduction import *
-from Modules.Recherche import *
+from ModulesCoeur.Traduction import *
+from ModulesCoeur.Recherche import *
 
 """
 Ce fichier comporte toutes les fonctions liées à la compréhension écrite et orale d'une demande

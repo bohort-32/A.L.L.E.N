@@ -1,5 +1,5 @@
 import os
-from Modules.Initialisation import *
+from ModulesCoeur.Initialisation import *
 from Classes.UserInterface import *
 
 

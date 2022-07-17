@@ -1,5 +1,5 @@
 from tkinter.messagebox import NO
-from Modules.Vocal import *
+from ModulesCoeur.Vocal import *
 from Classes.Utilisateur import *
 
 # Gère les interfaces utilisateur

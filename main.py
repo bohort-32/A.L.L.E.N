@@ -3,11 +3,11 @@ import os
 # Import du dossier des Modules
 
 # Imports Modules
-from Modules.Secret import *
-from Modules.Vocal import *
-from Modules.Comprendre import *
-from Modules.Initialisation import *
-from Modules.Demarrage import *
+from ModulesCoeur.Secret import *
+from ModulesCoeur.Vocal import *
+from ModulesCoeur.Comprendre import *
+from ModulesCoeur.Initialisation import *
+from ModulesCoeur.Demarrage import *
 # Imports Classes
 from Classes.UserInterface import *
 
