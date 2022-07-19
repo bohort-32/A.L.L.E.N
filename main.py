@@ -5,7 +5,7 @@ import os
 # Imports Modules
 from ModulesCoeur.Secret import *
 from ModulesCoeur.Vocal import *
-from ModulesCoeur.Comprendre import *
+from ClassesExt.Comprendre import *
 from ModulesCoeur.Initialisation import *
 from ModulesCoeur.Demarrage import *
 # Imports Classes
