@@ -19,6 +19,8 @@ LISTE_TRADUCTION = ['Traduire', 'traduire', 'Traduction', 'traduction']
 LISTE_TRANSITION = ['en', 'En', 'vers', 'Vers', 'a', 'à']
 LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
+LISTE_MODULES_EXT = []
+
 
 
 def comprendre(requete, API_KEY, USERInterface):
