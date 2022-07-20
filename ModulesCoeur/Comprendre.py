@@ -1,9 +1,7 @@
 from ModulesCoeur.Traduction import *
 from ModulesCoeur.Recherche import *
 from ClassesCoeur.ImportClassesExt import *
-from os import walk
-import os
-import shutil
+
 
 """
 Ce fichier comporte toutes les fonctions liées à la compréhension écrite et orale d'une demande
@@ -25,26 +23,6 @@ LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
 LISTE_MODULES_EXT = []
 
-
-
-
-def initialiser_modules_EXT():
-    # Cherche tous les fichiers du répertoire
-    for (repertoire, sousRepertoires, liste_fichiers) in walk('./ClassesExt/'):
-        # Se limite au répertoire des Classes Externes
-        if repertoire == './ClassesExt/':
-            # Liste les fichiers
-            for fichier in liste_fichiers:
-                # Suppression de l'extension
-                fichier = fichier.replace('.py', '')
-                if fichier != 'Comprendre':
-                    # Création de l'objet
-                    chemin_main = f"{os.getcwd()}/{fichier}.py"
-                    os.chdir('./ClassesExt')
-                    chemin_init = f"{os.getcwd()}/{fichier}.py"
-                    shutil.move(chemin_init, chemin_main)
-                    obj = ImportClassesExt(fichier, fichier)
-                    shutil.move(chemin_main, chemin_init)
 
 
 
