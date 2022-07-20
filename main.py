@@ -23,7 +23,7 @@ User = Retours_demarrage['Utilisateur']
 Debut = f'Bonjour {User.nom}'
 Au_revoir = 'Au revoir'
 
-
+"""
 # Début du script
 if __name__ == '__main__':
     print("=== DEBUT DU SCRIPT ===")
@@ -45,3 +45,4 @@ if __name__ == '__main__':
         else:
             # Réponse à l'utilisateur
             USERInterface.informer_utilisateur(retour['Reponse'])
+"""

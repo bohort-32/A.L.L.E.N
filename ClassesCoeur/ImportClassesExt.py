@@ -4,4 +4,7 @@ class ImportClassesExt:
         module = __import__(module_name)
         # Création de la classe
         my_class = getattr(module, class_name)
-        my_class.Comprendre()
+        self.module = my_class
+    
+    def lancer(self):
+        self.module.Comprendre()
