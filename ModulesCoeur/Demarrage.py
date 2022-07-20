@@ -29,5 +29,5 @@ def demarrerScript():
     USERInterface = UserInterface(user.entree_vocal, user.sortie_vocal, user)
 
     
-    initialiser_modules_EXT()
-    return {'Utilisateur':user, 'USERInterface':USERInterface}
+    LISTE_MODULES_EXT = initialiser_modules_EXT()
+    return {'Utilisateur':user, 'USERInterface':USERInterface, 'LISTE_MODULES_EXT':LISTE_MODULES_EXT}

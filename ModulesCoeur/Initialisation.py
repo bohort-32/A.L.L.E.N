@@ -21,6 +21,7 @@ def initialiser_infos_user(USERInterface, USER_NAME):
     USERInterface.informer_utilisateur('Félicitations, votre compte est initialisé !')
     
 def initialiser_modules_EXT():
+    LISTE_MODULES_EXT = []
     # Cherche tous les fichiers du répertoire
     for (repertoire, sousRepertoires, liste_fichiers) in walk('./ClassesExt/'):
         # Se limite au répertoire des Classes Externes
@@ -37,6 +38,8 @@ def initialiser_modules_EXT():
                     # Bouge le fichier pour exécution du main
                     shutil.move(chemin_init, chemin_main)
                     # Création de l'objet
-                    obj = ImportClassesExt(fichier, fichier)
+                    classe_ext = ImportClassesExt(fichier, fichier)
+                    LISTE_MODULES_EXT.append(classe_ext)
                     # Rangement du fichier
                     shutil.move(chemin_main, chemin_init)
+        return LISTE_MODULES_EXT

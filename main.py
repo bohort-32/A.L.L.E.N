@@ -19,11 +19,12 @@ FIN = False
 Retours_demarrage = demarrerScript()
 USERInterface = Retours_demarrage['USERInterface']
 User = Retours_demarrage['Utilisateur']
+LISTE_MODULES_EXT = Retours_demarrage['LISTE_MODULES_EXT']
 
 Debut = f'Bonjour {User.nom}'
 Au_revoir = 'Au revoir'
 
-"""
+
 # Début du script
 if __name__ == '__main__':
     print("=== DEBUT DU SCRIPT ===")
@@ -35,7 +36,7 @@ if __name__ == '__main__':
     # Tant qu'on demande pas le fin
     while FIN == False:
         # Demande utilisateur
-        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface)
+        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface, LISTE_MODULES_EXT)
 
         FIN = retour['FIN']
 
@@ -45,4 +46,3 @@ if __name__ == '__main__':
         else:
             # Réponse à l'utilisateur
             USERInterface.informer_utilisateur(retour['Reponse'])
-"""

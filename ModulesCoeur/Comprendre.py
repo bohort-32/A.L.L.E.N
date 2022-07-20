@@ -21,14 +21,16 @@ LISTE_TRADUCTION = ['Traduire', 'traduire', 'Traduction', 'traduction']
 LISTE_TRANSITION = ['en', 'En', 'vers', 'Vers', 'a', 'à']
 LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
-LISTE_MODULES_EXT = []
 
 
 
-
-def comprendre(requete, API_KEY, USERInterface):
+def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT):
     retour = ''
     FIN = False
+
+    for classe_ext in LISTE_MODULES_EXT:
+        classe_ext.lancer()
+
     
     recherche_entree = rechercher_mot(requete, LISTE_ENTREE)
     recherche_sortie = rechercher_mot(requete, LISTE_SORTIE)
@@ -66,6 +68,8 @@ def comprendre(requete, API_KEY, USERInterface):
     # Recherche
     else:
         retour = traduction(rechercher(traduction(requete, 'en', 'fr'), API_KEY), 'fr', 'en')
+
+
 
 
     return {'Reponse': retour, 'FIN': FIN}
