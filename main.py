@@ -3,13 +3,13 @@ import os
 # Import du dossier des Modules
 
 # Imports Modules
-from Modules.Secret import *
-from Modules.Vocal import *
-from Modules.Comprendre import *
-from Modules.Initialisation import *
-from Modules.Demarrage import *
+from ModulesCoeur.Secret import *
+from ModulesCoeur.Vocal import *
+from ModulesCoeur.Comprendre import *
+from ModulesCoeur.Initialisation import *
+from ModulesCoeur.Demarrage import *
 # Imports Classes
-from Classes.UserInterface import *
+from ClassesCoeur.UserInterface import *
 
 # Constantes
 FIN = False
@@ -19,6 +19,7 @@ FIN = False
 Retours_demarrage = demarrerScript()
 USERInterface = Retours_demarrage['USERInterface']
 User = Retours_demarrage['Utilisateur']
+LISTE_MODULES_EXT = Retours_demarrage['LISTE_MODULES_EXT']
 
 Debut = f'Bonjour {User.nom}'
 Au_revoir = 'Au revoir'
@@ -35,7 +36,7 @@ if __name__ == '__main__':
     # Tant qu'on demande pas le fin
     while FIN == False:
         # Demande utilisateur
-        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface)
+        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface, LISTE_MODULES_EXT, User)
 
         FIN = retour['FIN']
 

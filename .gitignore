@@ -130,9 +130,11 @@ dmypy.json
 
 
 # CLEFS API
-./Modules/Secret.py
 Secret.py
 
 # Fichiers utilisateurs
 DATA/*
 /DATA
+
+# Fichier de sample des modules ext
+TestExt.py

@@ -1,5 +1,7 @@
-from Modules.Traduction import *
-from Modules.Recherche import *
+from ModulesCoeur.Traduction import *
+from ModulesCoeur.Recherche import *
+from ClassesCoeur.ImportClassesExt import *
+
 
 """
 Ce fichier comporte toutes les fonctions liées à la compréhension écrite et orale d'une demande
@@ -21,10 +23,16 @@ LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
 
 
-def comprendre(requete, API_KEY, USERInterface):
+
+def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT, User):
     retour = ''
     FIN = False
+
+    for classe_ext in LISTE_MODULES_EXT:
+        classe_ext.integrer(USERInterface, User)
     
+
+
     recherche_entree = rechercher_mot(requete, LISTE_ENTREE)
     recherche_sortie = rechercher_mot(requete, LISTE_SORTIE)
     recherche_allumer = rechercher_mot(requete, LISTE_ALLUMER)
@@ -63,6 +71,8 @@ def comprendre(requete, API_KEY, USERInterface):
         retour = traduction(rechercher(traduction(requete, 'en', 'fr'), API_KEY), 'fr', 'en')
 
 
+
+
     return {'Reponse': retour, 'FIN': FIN}
 
 
@@ -76,3 +86,4 @@ def rechercher_mot(mot_recherche, liste_mots):
         if mot in mot_recherche and Trouve == False:
             Trouve = True
     return Trouve
+

@@ -1,6 +1,7 @@
 import os
-from Modules.Initialisation import *
-from Classes.UserInterface import *
+from ModulesCoeur.Initialisation import *
+from ClassesCoeur.UserInterface import *
+from ModulesCoeur.Comprendre import *
 
 
 def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
@@ -25,7 +26,8 @@ def demarrerScript():
     # Vérifie qu'un utilisateur existe ou le crée
     verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user)
     user = Utilisateur().charger_donnees_utilisateur(chemin_fic_user)
-    print(user.sortie_vocal)
     USERInterface = UserInterface(user.entree_vocal, user.sortie_vocal, user)
 
-    return {'Utilisateur':user, 'USERInterface':USERInterface}
+    
+    LISTE_MODULES_EXT = initialiser_modules_EXT()
+    return {'Utilisateur':user, 'USERInterface':USERInterface, 'LISTE_MODULES_EXT':LISTE_MODULES_EXT}
