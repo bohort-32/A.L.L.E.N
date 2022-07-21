@@ -5,6 +5,21 @@ from ModulesCoeur.Comprendre import *
 
 
 def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
+    """Vérifier si le dossier de l'utilisateur est présent.
+    Les crées si besoin.
+
+    Parameters
+    ----------
+    USER_NAME : str
+        Le nom de l'utilisateur en local.
+    USERInterface : UserInterface
+        L'interface avec l'utilisateur.
+    chemin_DATA : str
+        Le chemin pour accéder au données du logiciel.
+    chemin_user : str
+        Le chemin pour accéder au données de l'utilisateur.
+
+    """
     # == Vérification présence des dossier
     data_exist = os.path.exists(chemin_DATA)
     chemin_user_exist = os.path.exists(chemin_user)
@@ -15,6 +30,13 @@ def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
 
 
 def demarrerScript():
+    """Lance le démarrage de A.L.L.E.N
+
+    Returns
+    -------
+    dict
+        Contient l'utilisateur, son interface, la liste des modules extérieurs présents.
+    """
     # == Initialisation des variables
     USER_NAME = os.environ.get( "USERNAME" )
     USERInterface = UserInterface()
