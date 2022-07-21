@@ -2,8 +2,6 @@ class ImportClassesExt:
     """
     Une classe pour importer des classes/modules extérieurs.
 
-    ...
-
     Attributes
     ----------
     module_name : str
