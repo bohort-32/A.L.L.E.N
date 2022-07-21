@@ -9,6 +9,13 @@ Ce fichier comporte toutes les fonctions liées à la compréhension et à l'exp
 
 # Parle à partir d'un string
 def parler(phrase):
+    """Sort en vocal une phrase.
+
+    Parameters
+    ----------
+    phrase : str
+        La phrase à parler
+    """
     # Ouverture de la machine
     engine = pyttsx3.init()
     engine.say(phrase)
@@ -19,6 +26,13 @@ def parler(phrase):
 
 # Ecouter l'utilisateur et retranscrit en string sa compréhension
 def ecouter():
+    """Ecoute l'utilisateur.
+
+    Returns
+    -------
+    str
+        Le texte entendu.
+    """
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Ecoute : ")
