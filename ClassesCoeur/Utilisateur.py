@@ -34,7 +34,7 @@ class Utilisateur:
 
     def sauvegarder(self):
         # Définie les données à sauvegarder
-        sav_user = self.formater_sav(self)
+        sav_user = self.formater_sav()
         # Ouvre le fichier
         with open(f'./DATA/{self.win_usr}/utilisateur.json', 'w') as outfile:
             # Ecris
