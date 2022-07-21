@@ -6,5 +6,5 @@ class ImportClassesExt:
         my_class = getattr(module, class_name)
         self.module = my_class
     
-    def lancer(self):
-        self.module.Comprendre()
+    def integrer(self, USERInterface, User):
+        self.module.Comprendre(USERInterface, User)
