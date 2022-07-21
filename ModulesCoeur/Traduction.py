@@ -9,6 +9,22 @@ DIC_AB_LANGUE = {'français':'fr', 'Français':'fr', 'Anglais':'en', 'anglais':'
 
 # Traduction
 def traduction(mot, target='en', source='fr'):
+    """Traduit un mot d'une langue vers une autre
+
+    Parameters
+    ----------
+    mot : str
+        Le mot à traduire.
+    target : str
+        La langue à retourner
+    source : str
+        La langue à traduire.
+
+    Returns
+    -------
+    str
+        Le mot traduit.
+    """
     # Dictionnaire des abréviation des langues
     global DIC_AB_LANGUE
     # Vérification nécessité d'une traduction
