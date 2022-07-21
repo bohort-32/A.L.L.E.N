@@ -24,12 +24,13 @@ LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
 
 
-def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT):
+def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT, User):
     retour = ''
     FIN = False
 
     for classe_ext in LISTE_MODULES_EXT:
-        classe_ext.lancer()
+        classe_ext.lancer(User)
+    
 
     
     recherche_entree = rechercher_mot(requete, LISTE_ENTREE)

@@ -1,4 +1,4 @@
 # class inside the module
 class TestExt:
-    def Comprendre():
+    def Comprendre(USERInterface, User):
         print('Salut je suis le test')

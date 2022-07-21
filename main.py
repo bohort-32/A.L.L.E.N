@@ -36,7 +36,7 @@ if __name__ == '__main__':
     # Tant qu'on demande pas le fin
     while FIN == False:
         # Demande utilisateur
-        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface, LISTE_MODULES_EXT)
+        retour = comprendre(USERInterface.demande_utilisateur('Que puis-je pour vous ?'), API_KEY, USERInterface, LISTE_MODULES_EXT, User)
 
         FIN = retour['FIN']
 
