@@ -3,6 +3,20 @@ import wolframalpha
 
 # Retourne à partir d'une question (string) et d'un clefs la réponse à la question (string)
 def rechercher(question, app_id):
+    """Recherche sur wolframalpha une question.
+
+    Parameters
+    ----------
+    question : str
+        La question à répondre
+    app_id : str
+        La clef API
+
+    Returns
+    -------
+    str
+        La réponse trouvée.
+    """
     # Tableau compilant les résultats
     resultat = []
     # Connexion à l'API
