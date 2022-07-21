@@ -49,7 +49,6 @@ def demarrerScript():
     verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user)
     user = Utilisateur().charger_donnees_utilisateur(chemin_fic_user)
     USERInterface = UserInterface(user.entree_vocal, user.sortie_vocal, user)
-
-    
+    # La liste des modules extérieurs.
     LISTE_MODULES_EXT = initialiser_modules_EXT()
     return {'Utilisateur':user, 'USERInterface':USERInterface, 'LISTE_MODULES_EXT':LISTE_MODULES_EXT}
