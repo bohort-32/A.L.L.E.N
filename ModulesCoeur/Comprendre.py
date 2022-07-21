@@ -25,6 +25,26 @@ LISTE_LANGUE = ['Français', 'français', 'Anglais','anglais']
 
 
 def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT, User):
+    """Etudie la requete de l'utilisateur et retourne une réponse.
+
+    Parameters
+    ----------
+    requete : str
+        La demande de l'utilisateur.
+    API_KEY : int
+        La clef API wolframalpha.
+    USERInterface : UserInterface
+        L'interface avec l'utilisateur.
+    LISTE_MODULES_EXT : list
+        La liste d'objet des modules externes.
+    User : Utilisateur
+        L'utilisateur courant
+
+    Returns
+    -------
+    list
+        La réponse du système avec l'état du système.
+    """
     retour = ''
     FIN = False
     # A corriger dans la partie vérification entrées
@@ -82,6 +102,20 @@ def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT, User):
 
 
 def rechercher_mot(mot_recherche, liste_mots):
+    """Recherche si un mot est présent dans une liste
+
+    Parameters
+    ----------
+    mot_recherche : str
+        Le mot recherché
+    liste_mots : list
+        La liste où il faut chercher.
+
+    Returns
+    -------
+    bool
+        True si le mot est présent, False sinon.
+    """
     Trouve = False
     for mot in liste_mots:
         if mot in mot_recherche and Trouve == False:
