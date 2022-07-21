@@ -20,8 +20,16 @@ class UserInterface:
 
     Methods
     -------
-    integrer(self, USERInterface, User)
-        Lance le module de compréhension.
+    set_entree_vocal(on_off)
+        Change les paramètres d'entrée de l'utilsateur
+    set_sortie_vocal(on_off)
+        Change les paramètres de sortie de l'utilsateur
+    set_sortie_vocal(on_off)
+        Change les paramètres de sortie de l'utilsateur   
+    informer_utilisateur(message):
+        Informe l'utilisateur d'un message.
+    demande_utilisateur(demande):
+        Informe l'utilisateur d'une demande et retour son retour
     """
 
     def __init__(self, entree_vocal=False, sortie_vocal=False, user=None):
