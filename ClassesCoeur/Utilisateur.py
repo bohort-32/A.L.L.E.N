@@ -1,6 +1,5 @@
 import json
-
-# Gère les interfaces utilisateur
+from ModulesCoeur.Logger import *
 
 
 class Utilisateur:
@@ -55,6 +54,8 @@ class Utilisateur:
         self.entree_vocal = False
         self.sortie_vocal = False
 
+        get_logger().info(f"Init utilisateur")
+
         if (self.nom and clef_maitre and win_usr) != '':
             self.sauvegarder()
 
@@ -92,6 +93,7 @@ class Utilisateur:
         with open(f'./DATA/{self.win_usr}/utilisateur.json', 'w') as outfile:
             # Ecris
             json.dump(sav_user, outfile)
+        get_logger().info(f"Sauvegarde utilisateur")
 
 
 
@@ -117,6 +119,7 @@ class Utilisateur:
         audio = données_user['Audio']
         self.entree_vocal = audio['Entrée']
         self.sortie_vocal = audio['Sortie']
+        get_logger().info(f"Chargement utilisateur")
 
         # Retour des données
         return self
@@ -132,6 +135,7 @@ class Utilisateur:
             Nouveau nom.
         """
         self.nom = nom_nv
+        get_logger().info(f"Changement de nom : {nom_nv}")
         self.sauvegarder()
 
     # Change et sauvegarde la clef
@@ -145,6 +149,7 @@ class Utilisateur:
         """
         self.clef_maitre = clef_maitre_nv
         self.sauvegarder()
+        get_logger().info(f"Changement de clef")
 
     # Change et sauvegarde l'id windows
     def set_win_usr(self, win_usr_nv):
@@ -157,6 +162,7 @@ class Utilisateur:
         """
         self.win_usr = win_usr_nv
         self.sauvegarder()
+        get_logger().info(f"Changement de idlocal : {win_usr_nv}")
 
     # Change et sauvegarde les paramètres audio
     def set_entree_vocal(self, entree_vocal):
