@@ -24,6 +24,7 @@ def initialiser_dossier(USER_NAME, USERInterface, chemin_DATA, chemin_user, data
         Indique si les données utilisateurs sont présentes.
 
     """
+    get_logger().info(f"Initialisation du dossier")
     # == Création des dossier si besoin
     if not data_exist:
         os.mkdir(chemin_DATA)
@@ -43,6 +44,7 @@ def initialiser_infos_user(USERInterface, USER_NAME):
     USER_NAME : str
         Le nom de l'utilisateur en local.
     """
+    get_logger().info(f"Initialisation des données utilisateur")
     nom_user = USERInterface.demande_utilisateur('Comment dois-je vous appeller ?')
     user = Utilisateur(nom_user, 'AZERTY', USER_NAME)
     USERInterface.informer_utilisateur('Félicitations, votre compte est initialisé !')
