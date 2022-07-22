@@ -1,6 +1,7 @@
 from tkinter.messagebox import NO
 from ModulesCoeur.Vocal import *
 from ClassesCoeur.Utilisateur import *
+from ModulesCoeur.Logger import *
 
 # Gère les interfaces utilisateur
 
@@ -46,6 +47,8 @@ class UserInterface:
         self.entree_vocal = entree_vocal
         self.sortie_vocal = sortie_vocal
         self.user = user
+        get_logger().info("Init UserInterface")
+
 
     def set_entree_vocal(self, on_off):
         """Change le paramètre de l'entrée
@@ -58,6 +61,8 @@ class UserInterface:
         self.entree_vocal = on_off
         if self.user != None:
             self.user.set_entree_vocal(on_off)
+        get_logger().info(f"Entrée vocal : {on_off}")
+
 
     def set_sortie_vocal(self, on_off):
         """Change le paramètre de sortie
@@ -70,6 +75,8 @@ class UserInterface:
         self.sortie_vocal = on_off
         if self.user != None:
             self.user.set_sortie_vocal(on_off)
+        get_logger().info(f"Sortie vocal : {on_off}")
+
 
     # Informe l'utilisateur d'un message
     def informer_utilisateur(self, message):
@@ -86,6 +93,7 @@ class UserInterface:
         # Cas : Par texte
         else:
             print(message)
+        get_logger().info(f"Informe utilisateur : {message}")
 
     # Demande à l'utilisateur une information
     def demande_utilisateur(self, demande):
@@ -111,5 +119,6 @@ class UserInterface:
         else:
             retour = input('Saisie : ')
 
+        get_logger().info(f"Demande utilisateur : {demande} / Réponse : {retour}")
         # Retour de l'utilisateur
         return retour

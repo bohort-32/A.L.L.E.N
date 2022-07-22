@@ -1,3 +1,6 @@
+from ModulesCoeur.Logger import *
+
+
 class ImportClassesExt:
     """
     Une classe pour importer des classes/modules extérieurs.
@@ -29,6 +32,10 @@ class ImportClassesExt:
         # Création de la classe
         my_class = getattr(module, class_name)
         self.module = my_class
+        # Ajout de l'information dans le logger
+        get_logger().info("Init ImportClassesExt")
+        
+
 
     def integrer(self, USERInterface, User):
         """Lance le module de comprhénsion.
