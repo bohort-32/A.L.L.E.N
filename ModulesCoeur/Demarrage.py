@@ -2,6 +2,7 @@ import os
 from ModulesCoeur.Initialisation import *
 from ClassesCoeur.UserInterface import *
 from ModulesCoeur.Comprendre import *
+from ModulesCoeur.Logger import *
 
 
 def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
@@ -25,6 +26,7 @@ def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
     chemin_user_exist = os.path.exists(chemin_user)
 
     if not data_exist or not chemin_user_exist:
+        get_logger().info(f"Aucun dossier présent")
         initialiser_dossier(USER_NAME, USERInterface, chemin_DATA, chemin_user, data_exist, chemin_user_exist)
     
 
@@ -37,6 +39,8 @@ def demarrerScript():
     dict
         Contient l'utilisateur, son interface, la liste des modules extérieurs présents.
     """
+    get_logger().info(f"Démarrage du script")
+
     # == Initialisation des variables
     USER_NAME = os.environ.get( "USERNAME" )
     USERInterface = UserInterface()
