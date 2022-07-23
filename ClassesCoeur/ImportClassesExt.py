@@ -32,12 +32,10 @@ class ImportClassesExt:
         # Création de la classe
         my_class = getattr(module, class_name)
         self.module = my_class
-        # Ajout de l'information dans le logger
-        get_logger().info("Init ImportClassesExt")
         
 
 
-    def integrer(self, USERInterface, User):
+    def integrer(self, USERInterface, User, requete):
         """Lance le module de comprhénsion.
 
         Parameters
@@ -49,4 +47,4 @@ class ImportClassesExt:
             L'utilisateur courant.
         """
         # Lancement du module de compréhension
-        self.module.Comprendre(USERInterface, User)
+        self.module.Comprendre(USERInterface, User, requete)
