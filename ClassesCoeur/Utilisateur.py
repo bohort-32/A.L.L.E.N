@@ -1,6 +1,5 @@
 import json
-
-# Gère les interfaces utilisateur
+from ModulesCoeur.Logger import *
 
 
 class Utilisateur:

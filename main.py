@@ -1,5 +1,6 @@
 import sys
 import os
+
 # Import du dossier des Modules
 
 # Imports Modules
@@ -8,6 +9,7 @@ from ModulesCoeur.Vocal import *
 from ModulesCoeur.Comprendre import *
 from ModulesCoeur.Initialisation import *
 from ModulesCoeur.Demarrage import *
+from ModulesCoeur.Logger import *
 # Imports Classes
 from ClassesCoeur.UserInterface import *
 
@@ -16,13 +18,19 @@ FIN = False
 
 
 
+
+
 Retours_demarrage = demarrerScript()
 USERInterface = Retours_demarrage['USERInterface']
 User = Retours_demarrage['Utilisateur']
 LISTE_MODULES_EXT = Retours_demarrage['LISTE_MODULES_EXT']
 
+
+get_logger(User).info("START LOGGER")
+
 Debut = f'Bonjour {User.nom}'
 Au_revoir = 'Au revoir'
+
 
 
 # Début du script

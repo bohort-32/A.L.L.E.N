@@ -1,6 +1,7 @@
 from tkinter.messagebox import NO
 from ModulesCoeur.Vocal import *
 from ClassesCoeur.Utilisateur import *
+from ModulesCoeur.Logger import *
 
 # Gère les interfaces utilisateur
 
@@ -47,6 +48,7 @@ class UserInterface:
         self.sortie_vocal = sortie_vocal
         self.user = user
 
+
     def set_entree_vocal(self, on_off):
         """Change le paramètre de l'entrée
 
@@ -59,6 +61,7 @@ class UserInterface:
         if self.user != None:
             self.user.set_entree_vocal(on_off)
 
+
     def set_sortie_vocal(self, on_off):
         """Change le paramètre de sortie
 
@@ -70,6 +73,7 @@ class UserInterface:
         self.sortie_vocal = on_off
         if self.user != None:
             self.user.set_sortie_vocal(on_off)
+
 
     # Informe l'utilisateur d'un message
     def informer_utilisateur(self, message):

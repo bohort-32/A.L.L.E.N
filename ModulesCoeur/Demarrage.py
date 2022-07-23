@@ -2,6 +2,7 @@ import os
 from ModulesCoeur.Initialisation import *
 from ClassesCoeur.UserInterface import *
 from ModulesCoeur.Comprendre import *
+from ModulesCoeur.Logger import *
 
 
 def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
