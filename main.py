@@ -20,13 +20,6 @@ FIN = False
 
 
 
-
-
-
-
-
-
-
 Retours_demarrage = demarrerScript()
 USERInterface = Retours_demarrage['USERInterface']
 User = Retours_demarrage['Utilisateur']
