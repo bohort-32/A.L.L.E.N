@@ -61,17 +61,18 @@ def initialiser_modules_EXT():
     """
     LISTE_MODULES_EXT = []
     # Cherche tous les fichiers du répertoire
-    for (repertoire, sousRepertoires, liste_fichiers) in walk('./ClassesExt/'):
+    repertoire = './ClassesOut/'
+    for (repertoire, sousRepertoires, liste_fichiers) in walk(repertoire):
         # Se limite au répertoire des Classes Externes
-        if repertoire == './ClassesExt/':
+        if repertoire == repertoire:
             # Liste les fichiers
             for fichier in liste_fichiers:
                 # Suppression de l'extension
                 fichier = fichier.replace('.py', '')
-                if fichier != 'Comprendre':
+                if fichier != repertoire:
                     # === Définition des chemins à prendre
                     chemin_main = f"{os.getcwd()}/{fichier}.py"
-                    os.chdir('./ClassesExt')
+                    os.chdir(repertoire)
                     chemin_init = f"{os.getcwd()}/{fichier}.py"
                     # Bouge le fichier pour exécution du main
                     shutil.move(chemin_init, chemin_main)

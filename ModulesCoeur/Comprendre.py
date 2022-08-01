@@ -47,10 +47,11 @@ def comprendre(requete, API_KEY, USERInterface, LISTE_MODULES_EXT, User):
     """
     retour = ''
     FIN = False
+
     # A corriger dans la partie vérification entrées
     if LISTE_MODULES_EXT != None:
         for classe_ext in LISTE_MODULES_EXT:
-            classe_ext.integrer(USERInterface, User)
+            classe_ext.integrer(USERInterface, User, requete)
     
 
 
