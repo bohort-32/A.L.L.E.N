@@ -53,6 +53,8 @@ class Utilisateur:
         # Elements Audio
         self.entree_vocal = False
         self.sortie_vocal = False
+        # Web Socket
+        self.websock = False
 
         if (self.nom and clef_maitre and win_usr) != '':
             self.sauvegarder()
@@ -75,7 +77,8 @@ class Utilisateur:
             "Audio": {
                 "Entrée": self.entree_vocal,
                 "Sortie": self.sortie_vocal
-            }
+            },
+            "WebSock": self.websock,
         }
         # Retourne le format
         return sav_user
@@ -116,6 +119,9 @@ class Utilisateur:
         audio = données_user['Audio']
         self.entree_vocal = audio['Entrée']
         self.sortie_vocal = audio['Sortie']
+
+        # Extraction du websocket
+        self.websock = données_user['WebSock']
 
         # Retour des données
         return self
@@ -180,3 +186,24 @@ class Utilisateur:
         """
         self.sortie_vocal = sortie_vocal
         self.sauvegarder()
+
+
+
+    def set_websock(self, on_off):
+        """Change le paramètre de websocket.
+
+        Parameters
+        ----------
+        on_off : bool
+            Le statut d'allumage/
+        """
+        on_off_voc = True
+        if on_off:
+            on_off_voc = False
+
+        self.set_entree_vocal(on_off_voc)
+        self.set_sortie_vocal(on_off_voc)
+        self.websock = on_off
+        self.sauvegarder()
+        
+

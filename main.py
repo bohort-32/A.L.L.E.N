@@ -10,6 +10,8 @@ from ModulesCoeur.Comprendre import *
 from ModulesCoeur.Initialisation import *
 from ModulesCoeur.Demarrage import *
 from ModulesCoeur.Logger import *
+#from ModulesCoeur.WebSocket import *
+
 # Imports Classes
 from ClassesCoeur.UserInterface import *
 
@@ -38,9 +40,8 @@ if __name__ == '__main__':
     print("=== DEBUT DU SCRIPT ===")
     API_KEY = get_API_KEY_WOLFRAMALPHA()
 
-    # Informe utilisateur allumag A.L.L.E.N
+    # Informe utilisateur allumage A.L.L.E.N
     USERInterface.informer_utilisateur(Debut)
-
     # Tant qu'on demande pas le fin
     while FIN == False:
         # Demande utilisateur
@@ -53,4 +54,4 @@ if __name__ == '__main__':
             USERInterface.informer_utilisateur(Au_revoir)
         else:
             # Réponse à l'utilisateur
-            USERInterface.informer_utilisateur(retour['Reponse'])
+            USERInterface.informer_utilisateur(retour['Reponse'])  

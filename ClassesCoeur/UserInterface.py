@@ -33,7 +33,7 @@ class UserInterface:
         Informe l'utilisateur d'une demande et retour son retour
     """
 
-    def __init__(self, entree_vocal=False, sortie_vocal=False, user=None):
+    def __init__(self, entree_vocal=False, sortie_vocal=False, web_sock=False, user=None):
         """
         Parameters
         ----------
@@ -46,6 +46,7 @@ class UserInterface:
         """
         self.entree_vocal = entree_vocal
         self.sortie_vocal = sortie_vocal
+        self.web_sock = web_sock
         self.user = user
 
 
