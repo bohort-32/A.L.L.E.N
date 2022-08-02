@@ -24,7 +24,8 @@ def get_logger(utilisateur, nom_fic='logfile', format="%(asctime)s %(levelname)s
     """
 
     # == Initialisation du chemin et du fichier
-    chemin = f"../DATA/{utilisateur.win_usr}/Logs"
+    absolute_path = get_absolute_path()
+    chemin = f"{absolute_path}/DATA/{utilisateur.win_usr}/Logs"
     nom_fic = f"{chemin}/{nom_fic}"
     # Le chemin existe
     existe = os.path.isdir(chemin)

@@ -3,6 +3,7 @@ from ModulesCoeur.Initialisation import *
 from ClassesCoeur.UserInterface import *
 from ModulesCoeur.Comprendre import *
 from ModulesCoeur.Logger import *
+from ModulesCoeur.Secret import *
 
 
 def verifierInit(USER_NAME, USERInterface, chemin_DATA, chemin_user):
@@ -42,7 +43,8 @@ def demarrerScript():
     USER_NAME = os.environ.get( "USERNAME" )
     USERInterface = UserInterface()
     # Chemin des données utilisateurs
-    chemin_DATA = f'./DATA'
+    absolute_path = get_absolute_path()
+    chemin_DATA = f'{absolute_path}/DATA'
     # Chemin des données de l'utilisateur courant
     chemin_user = f'{chemin_DATA}/{USER_NAME}'
     chemin_fic_user = f'{chemin_user}/utilisateur.json'

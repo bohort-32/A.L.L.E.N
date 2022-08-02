@@ -1,5 +1,6 @@
 import json
 from ModulesCoeur.Logger import *
+from ModulesCoeur.Secret import *
 
 
 class Utilisateur:
@@ -89,9 +90,11 @@ class Utilisateur:
         """Sauvegarde les données de l'utilisateur.
         """
         # Définie les données à sauvegarder
+        absolute_path = get_absolute_path()
+
         sav_user = self.formater_sav()
         # Ouvre le fichier
-        with open(f'./DATA/{self.win_usr}/utilisateur.json', 'w') as outfile:
+        with open(f'{absolute_path}/DATA/{self.win_usr}/utilisateur.json', 'w') as outfile:
             # Ecris
             json.dump(sav_user, outfile)
 

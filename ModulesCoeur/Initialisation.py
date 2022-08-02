@@ -60,7 +60,8 @@ def initialiser_modules_EXT():
     """
     LISTE_MODULES_EXT = []
     # Cherche tous les fichiers du répertoire
-    repertoire = './ClassesOut/'
+    absolute_path = get_absolute_path()
+    repertoire = f'{absolute_path}/ClassesOut/'
     for (repertoire, sousRepertoires, liste_fichiers) in walk(repertoire):
         # Se limite au répertoire des Classes Externes
         if repertoire == repertoire:

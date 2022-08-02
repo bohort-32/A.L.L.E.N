@@ -40,8 +40,17 @@ if __name__ == '__main__':
     print("=== DEBUT DU SCRIPT ===")
     API_KEY = get_API_KEY_WOLFRAMALPHA()
 
+
     # Informe utilisateur allumage A.L.L.E.N
     USERInterface.informer_utilisateur(Debut)
+
+    User.set_websock(True)
+
+    if User.websock:
+        print('test')
+    else:
+        print('pas sock')
+
     # Tant qu'on demande pas le fin
     while FIN == False:
         # Demande utilisateur
